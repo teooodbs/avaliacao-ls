@@ -1,0 +1,65 @@
+console.log('OPERAÇÕES EM VETORES: ')
+function sum(array) {
+    return array.reduce((acc, valor) => acc + valor, 0);
+  }
+  
+  function sumOdds(array) {
+    return array.reduce((acc, valor) => valor % 2 !== 0 ? acc + valor : acc, 0);
+  }
+  
+  function product(array) {
+    return array.reduce((acc, valor) => acc * valor, 1);
+  }
+  
+console.log(sum([1,2,3]))
+console.log(sumOdds([1,2,3]))
+console.log(product([1,2,3]))
+
+
+console.log('OBJETO EXAMES:')
+const notas = []
+const pesos = []
+
+const adicionar = (nota, peso) => {
+  notas.push(nota)
+  pesos.push(peso)
+};
+
+
+const media = () => {
+  let soma = 0
+  let totalPesos = 0
+
+  for (let i = 0; i < notas.length; i++) {
+    soma += notas[i] * pesos[i]
+    totalPesos += pesos[i]
+  }
+
+  return soma / totalPesos
+};
+
+const menores = (quantidade = 1) => {
+  return [...notas].sort((a, b) => a - b).slice(0, quantidade)
+};
+
+const maiores = (quantidade = 1) => {
+  return [...notas].sort((a, b) => b - a).slice(0, quantidade)
+};
+const menoresQue = (limite) => {
+  return notas.filter(nota => nota < limite)
+};
+
+const maioresQue = (limite) => {
+  return notas.filter(nota => nota > limite)
+};
+
+adicionar(7, 2)
+adicionar(5, 1)
+adicionar(9, 3)
+
+console.log("Notas:", notas)
+console.log("Média:", media())
+console.log("2 menores notas:", menores(2)) 
+console.log("Maior nota:", maiores(1))
+console.log("Notas menores que 7:", menoresQue(7))
+console.log("Notas maiores que 7:", maioresQue(7))
