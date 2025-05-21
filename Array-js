@@ -1,0 +1,16 @@
+console.log('OPERAÇÕES EM VETORES: ')
+function sum(array) {
+    return array.reduce((acc, valor) => acc + valor, 0);
+  }
+  
+  function sumOdds(array) {
+    return array.reduce((acc, valor) => valor % 2 !== 0 ? acc + valor : acc, 0);
+  }
+  
+  function product(array) {
+    return array.reduce((acc, valor) => acc * valor, 1);
+  }
+  
+console.log(sum([1,2,3]))
+console.log(sumOdds([1,2,3]))
+console.log(product([1,2,3]))
